@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loftus Sports Communications | Sports PR &amp; Media Relations</title>
+<meta name="description" content="Loftus Sports Communications provides media relations, crisis communications, athlete media training and campaign storytelling for teams, leagues, athletes and brands.">
+<meta property="og:title" content="Loftus Sports Communications">
+<meta property="og:description" content="Sports PR and communications for teams, leagues, athletes and brands.">
+<meta name="theme-color" content="#102A4C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23102A4C'/%3E%3Cpath d='M5 3h2.2v7.2H11V12H5z' fill='%23F5F3EE'/%3E%3Crect x='4' y='13' width='6' height='1' fill='%23C8A04B'/%3E%3Crect x='10' y='13' width='2' height='1' fill='%232E8A5F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Brand palette (Brand Guidelines v1.0) */
+    --navy: #102A4C;      /* Press Box Navy: primary */
+    --navy-2: #163560;    /* lifted navy for panels on navy */
+    --green: #1E5B40;     /* Pitch Green: secondary, links, buttons */
+    --green-on-navy: #2E8A5F; /* green as used in the reversed logo rule */
+    --gold: #C8A04B;      /* Trophy Gold: rules, dots, highlights on navy only */
+    --chalk: #F5F3EE;     /* page background, text on navy */
+    --ink: #0E1726;       /* body text */
+    --slate: #5E6773;     /* captions, secondary text */
+    --line: #E2DED5;
+    --white: #FFFFFF;
+
+    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --body: "Barlow", Arial, sans-serif;
+
+    --wrap: 1180px;
+    --gutter: clamp(16px, 4vw, 40px);
+    --rule: linear-gradient(90deg, var(--gold) 0 75%, var(--green-on-navy) 75% 100%);
+    --rule-light: linear-gradient(90deg, var(--gold) 0 75%, var(--green) 75% 100%);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0;
+    background: var(--chalk);
+    color: var(--ink);
+    font: 400 17px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--green); }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Type */
+  .label {
+    font: 600 14px/1.2 var(--display);
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin: 0 0 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .label::before { content: ""; width: 28px; height: 3px; background: var(--rule-light); flex: none; }
+  .on-navy .label { color: var(--gold); }
+  .on-navy .label::before { background: var(--rule); }
+  h1, h2, h3 { font-family: var(--display); color: var(--navy); margin: 0; }
+  h1 { font-weight: 700; font-size: clamp(42px, 5.6vw, 76px); line-height: .98; text-transform: uppercase; letter-spacing: .005em; }
+  h2 { font-weight: 700; font-size: clamp(36px, 4.6vw, 56px); line-height: 1; text-transform: uppercase; }
+  h3 { font-weight: 600; font-size: 28px; line-height: 1.1; }
+  .lede { font-size: 19px; color: var(--slate); max-width: 60ch; margin: 20px 0 0; }
+  .on-navy { background: var(--navy); color: var(--chalk); }
+  .on-navy h1, .on-navy h2, .on-navy h3 { color: var(--chalk); }
+  .on-navy .lede { color: rgba(245, 243, 238, .78); }
+  .hl { position: relative; white-space: nowrap; }
+  .hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.04em; height: .09em; background: var(--rule); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font: 600 16px/1 var(--display); letter-spacing: .14em; text-transform: uppercase;
+    padding: 17px 26px; border-radius: 2px; text-decoration: none;
+    border: 2px solid transparent; cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s, transform .2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--green); color: var(--chalk); }
+  .btn-primary:hover { background: #237050; }
+  .on-navy .btn-primary { background: var(--green-on-navy); color: var(--white); }
+  .on-navy .btn-primary:hover { background: #349a6a; }
+  .btn-ghost { border-color: rgba(245, 243, 238, .35); color: var(--chalk); }
+  .btn-ghost:hover { border-color: var(--chalk); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: #D4AF5F; }
+  .btn svg { width: 16px; height: 16px; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* Nav */
+  .nav { position: sticky; top: 0; z-index: 50; background: var(--navy); transition: box-shadow .25s; }
+  .nav.scrolled { box-shadow: 0 1px 0 rgba(245, 243, 238, .08), 0 10px 30px rgba(8, 20, 38, .35); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .brand img { height: 46px; width: auto; }
+  .brand .wm { height: 58px; }
+  .nav-links { display: flex; align-items: center; gap: 34px; }
+  .nav-links a:not(.btn) {
+    color: var(--chalk); text-decoration: none;
+    font: 600 15px/1 var(--display); letter-spacing: .18em; text-transform: uppercase;
+    position: relative; padding: 6px 0;
+  }
+  .nav-links a:not(.btn)::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+    background: var(--rule); transform: scaleX(0); transform-origin: left; transition: transform .25s;
+  }
+  .nav-links a:not(.btn):hover::after { transform: scaleX(1); }
+  .nav-links .btn { padding: 12px 18px; font-size: 14px; }
+  .menu-btn { display: none; background: none; border: 0; color: var(--chalk); padding: 8px; cursor: pointer; }
+  .menu-btn svg { width: 28px; height: 28px; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: clamp(64px, 10vw, 128px) 0 clamp(72px, 10vw, 120px); }
+  .hero::before {
+    /* subtle press-box grid */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(245, 243, 238, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 243, 238, .035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%);
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .hero h1 { margin-top: 6px; }
+  .hero .lede { font-size: 20px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+
+  .playbook {
+    background: var(--navy-2);
+    border: 1px solid rgba(245, 243, 238, .1);
+    border-radius: 4px;
+    padding: 30px 30px 10px;
+    box-shadow: 0 30px 60px rgba(5, 14, 28, .35);
+    position: relative;
+  }
+  .playbook::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--rule); border-radius: 4px 4px 0 0; }
+  .playbook-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .playbook-head span { font: 600 13px/1 var(--display); letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .playbook-head em { font-style: normal; font: 500 13px/1 var(--display); letter-spacing: .16em; color: rgba(245, 243, 238, .55); text-transform: uppercase; }
+  .play { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid rgba(245, 243, 238, .1); }
+  .play:first-of-type { border-top: 0; }
+  .play b { font: 700 28px/1 var(--display); color: rgba(245, 243, 238, .28); }
+  .play h3 { font-size: 22px; text-transform: uppercase; letter-spacing: .03em; }
+  .play p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: rgba(245, 243, 238, .7); }
+
+  /* Logos strip */
+  .logos { padding: 54px 0 58px; border-bottom: 1px solid var(--line); background: var(--white); }
+  .logos .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; }
+  .logos .label { margin: 0; color: var(--slate); }
+  .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 36px; }
+  .logo-row img { height: 52px; width: auto; filter: grayscale(1); opacity: .62; transition: filter .3s, opacity .3s; }
+  .logo-row img.wide { height: 40px; }
+  .logo-row img:hover { filter: none; opacity: 1; }
+
+  /* Sections */
+  section.block { padding: clamp(80px, 10vw, 128px) 0; }
+  .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
+  .section-head .lede { margin: 0; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .service { background: var(--chalk); padding: 38px 34px 40px; transition: background .25s; position: relative; }
+  .service::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--rule-light); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+  .service:hover { background: var(--white); }
+  .service:hover::after { transform: scaleX(1); }
+  .service .ico { width: 46px; height: 46px; border-radius: 2px; background: var(--navy); display: grid; place-items: center; margin-bottom: 26px; }
+  .service .ico svg { width: 24px; height: 24px; stroke: var(--chalk); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .service h3 { margin-bottom: 10px; }
+  .service p { margin: 0; color: var(--slate); font-size: 16px; }
+  .service ul { margin: 18px 0 0; padding: 0; list-style: none; }
+  .service li { font-size: 15px; color: var(--ink); padding: 5px 0 5px 18px; position: relative; }
+  .service li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+  /* Who I work with */
+  .clients-band { padding: clamp(80px, 10vw, 120px) 0; }
+  .audiences { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+  .aud { border-top: 1px solid rgba(245, 243, 238, .16); padding-top: 26px; }
+  .aud .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); margin-bottom: 18px; }
+  .aud h3 { font-size: 26px; text-transform: uppercase; letter-spacing: .02em; }
+  .aud p { margin: 10px 0 0; color: rgba(245, 243, 238, .72); font-size: 16px; }
+
+
+  /* About */
+  .about { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 7vw, 100px); align-items: center; }
+  .portrait { position: relative; max-width: 440px; isolation: isolate; }
+  .portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 2px; }
+  .portrait::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; background: var(--navy); z-index: -1; border-radius: 2px; }
+  .portrait-cap { position: absolute; left: 0; bottom: 0; right: 0; padding: 18px 22px 20px; background: var(--navy); color: var(--chalk); }
+  .portrait-cap strong { display: block; font: 700 24px/1.1 var(--display); text-transform: uppercase; letter-spacing: .03em; }
+  .portrait-cap span { font: 600 13px/1.4 var(--display); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .portrait-cap::after { content: ""; display: block; margin-top: 12px; width: 84px; height: 3px; background: var(--rule); }
+  .about-copy p { margin: 18px 0 0; }
+  .about-copy p:first-of-type { margin-top: 24px; }
+  .about-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+
+  /* Quote */
+  .quote { padding: clamp(72px, 9vw, 112px) 0; text-align: center; }
+  .quote blockquote { margin: 0 auto; max-width: 900px; font: 600 clamp(30px, 3.8vw, 46px)/1.12 var(--display); color: var(--navy); }
+  .quote .mark { width: 120px; height: 4px; background: var(--rule-light); margin: 0 auto 34px; }
+
+  /* Contact */
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
+  .contact-points { margin-top: 36px; display: grid; gap: 18px; }
+  .contact-points div { display: flex; gap: 14px; align-items: flex-start; color: rgba(245, 243, 238, .82); font-size: 16px; }
+  .contact-points a { color: var(--chalk); text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 1px; overflow-wrap: anywhere; }
+  .contact-points a:hover { color: var(--gold); }
+  .field abbr { color: var(--green); text-decoration: none; }
+  .contact-points .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-top: 9px; flex: none; }
+  form.card { background: var(--chalk); color: var(--ink); padding: clamp(26px, 4vw, 42px); border-radius: 4px; position: relative; }
+  form.card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--rule-light); border-radius: 4px 4px 0 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { display: grid; gap: 7px; margin-bottom: 18px; }
+  .field label { font: 600 13px/1 var(--display); letter-spacing: .2em; text-transform: uppercase; color: var(--navy); }
+  .field input, .field select, .field textarea {
+    font: 400 16px/1.4 var(--body); color: var(--ink);
+    background: var(--white); border: 1px solid #D4CFC4; border-radius: 2px; padding: 13px 14px; width: 100%;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .field textarea { min-height: 128px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(30, 91, 64, .15); }
+  form.card .btn { width: 100%; justify-content: center; margin-top: 6px; }
+  .form-note { margin: 14px 0 0; font-size: 14px; color: var(--slate); text-align: center; }
+
+  /* Footer */
+  footer { background: var(--navy); border-top: 1px solid rgba(245, 243, 238, .1); color: rgba(245, 243, 238, .7); padding: 54px 0 40px; font-size: 15px; }
+  footer .top { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding-bottom: 34px; border-bottom: 1px solid rgba(245, 243, 238, .1); }
+  footer .brand img { height: 56px; }
+  footer nav { display: flex; gap: 28px; flex-wrap: wrap; }
+  footer nav a { color: var(--chalk); text-decoration: none; font: 600 14px/1 var(--display); letter-spacing: .18em; text-transform: uppercase; }
+  footer nav a:hover { color: var(--gold); }
+  footer .bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 26px; font-size: 14px; }
+  .footer-contact { display: inline-flex; align-items: center; gap: 14px; }
+  .footer-contact a { color: var(--chalk); text-decoration: none; }
+  .footer-contact a:hover { color: var(--gold); }
+  .footer-contact .li svg { width: 22px; height: 22px; display: block; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Desktop: compact hero so the "Experience across" strip shows above the fold */
+  @media (min-width: 1021px) {
+    .hero { padding: 52px 0 60px; }
+    .hero .wrap { grid-template-columns: 1.45fr 1fr; gap: 64px; }
+    .hero h1 { font-size: clamp(52px, 4.6vw, 68px); }
+    .hero .lede { margin-top: 18px; }
+    .hero-ctas { margin-top: 28px; }
+    .playbook { padding: 22px 26px 4px; }
+    .playbook-head { margin-bottom: 4px; }
+    .play { padding: 13px 0; }
+    .logos { padding: 30px 0 34px; }
+  }
+
+  /* Responsive */
+  @media (max-width: 1020px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .playbook { max-width: 560px; }
+    .services { grid-template-columns: repeat(2, 1fr); }
+    .audiences { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+    .logos .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .logo-row { justify-content: flex-start; }
+  }
+  @media (max-width: 860px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--navy); padding: 8px var(--gutter) 24px; border-top: 1px solid rgba(245, 243, 238, .1);
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a:not(.btn) { padding: 16px 0; border-bottom: 1px solid rgba(245, 243, 238, .08); }
+    .nav-links .btn { margin-top: 18px; justify-content: center; padding: 16px; }
+    .section-head, .about .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .section-head { gap: 20px; }
+    .portrait { margin: 0 22px 22px 0; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .brand img { height: 38px; }
+    .brand .wm { height: 48px; }
+    .services, .audiences { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+    .logo-row { gap: 24px 28px; }
+    .logo-row img { height: 40px; }
+    .logo-row img.wide { height: 30px; }
+    .hl { white-space: normal; }
+    .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav on-navy" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Loftus Sports Communications home">
+      <img class="wm" src="assets/lockup-navy.png" alt="Loftus Sports Communications" width="358" height="144">
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="https://danielloftuscfb.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">Substack</a>
+      <a class="btn btn-primary" href="#contact">Start a conversation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero on-navy">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">Sports PR &amp; Communications</p>
+      <h1>Support for sports communications <span class="hl">challenges</span></h1>
+      <p class="lede">Media relations, writing and campaign development from an experienced sports PR pro.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Contact
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">My services</a>
+        <a class="btn btn-gold" href="#about">About</a>
+      </div>
+    </div>
+
+    <aside class="playbook reveal" aria-label="What I handle">
+      <div class="playbook-head"><span>The Playbook</span><em>LSC</em></div>
+      <div class="play"><b>01</b><div><h3>Media relations</h3><p>Writing projects, record keeping, pitching and other fractional support.</p></div></div>
+      <div class="play"><b>02</b><div><h3>Storytelling</h3><p>Help finding, planning and executing stories of teams, athletes and brands.</p></div></div>
+      <div class="play"><b>03</b><div><h3>Digital &amp; social strategy</h3><p>Brand building and effective digital storytelling.</p></div></div>
+    </aside>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos" aria-label="Experience">
+  <div class="wrap">
+    <p class="label">Experience across</p>
+    <div class="logo-row">
+      <img src="assets/clients/nfl.png" alt="NFL" loading="lazy">
+      <img src="assets/clients/nba.png" alt="NBA" loading="lazy">
+      <img src="assets/clients/brooklyn-nets.png" alt="Brooklyn Nets" loading="lazy">
+      <img class="wide" src="assets/clients/big-ten.png" alt="Big Ten Conference" loading="lazy">
+      <img src="assets/clients/notre-dame.png" alt="Notre Dame Fighting Irish" loading="lazy">
+      <img src="assets/clients/syracuse.png" alt="Syracuse Orange" loading="lazy">
+      <img src="assets/clients/xavier.png" alt="Xavier Musketeers" loading="lazy">
+      <img class="wide" src="assets/clients/little-league.png" alt="Little League International" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="label">Services</p>
+        <h2>Communications built for the speed of sports.</h2>
+      </div>
+      <p class="lede">From fractional backend support to messaging strategy and tactical execution, LSC is here to support sports PR pros where they need it most.</p>
+    </div>
+
+    <div class="services reveal">
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
+        <h3>Fractional comms support</h3>
+        <p>Sports PR demands a lot. Add an outside team member to free you up for the storytelling that matters.</p>
+        <ul><li>Game notes, media guides &amp; record keeping</li><li>Previews &amp; press releases</li><li>Website backend management</li></ul>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg></div>
+        <h3>Campaign storytelling</h3>
+        <p>Narratives and content that turn milestones, launches and moments into stories people remember.</p>
+        <ul><li>Feature stories &amp; profiles</li><li>Announcement campaigns</li><li>Award &amp; recognition campaigns</li></ul>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M20.4 3.5L16 2a4 4 0 01-8 0L3.6 3.5a2 2 0 00-1.3 2.2l.6 3.5a1 1 0 001 .8H6v10a2 2 0 002 2h8a2 2 0 002-2V10h2.2a1 1 0 001-.8l.6-3.5a2 2 0 00-1.3-2.2z"/><path d="M10 11v5M14 11v5"/></svg></div>
+        <h3>NIL storytelling</h3>
+        <p>Add substance to NIL strategy. Stories that help athletes build their name, image and likeness value with fans, brands and partners.</p>
+        <ul><li>Athlete profiles &amp; features</li><li>Storytelling plans &amp; execution reports</li><li>Branding content &amp; support</li></ul>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 100-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="M7 20l1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 00-2.75-2.91l-4.2 3.9"/><path d="M2 15l6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0016 4a2.78 2.78 0 00-5 1.8c0 1.2.8 2 1.5 2.8L16 12z"/></svg></div>
+        <h3>Donor communications</h3>
+        <p>Show supporters the impact of their giving. Stories and updates that strengthen donor relationships and inspire the next gift.</p>
+        <ul><li>Donor impact stories &amp; reports</li><li>Annual fund &amp; capital campaign content</li><li>Stewardship &amp; event communications</li></ul>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M11 7.6l-6 8.2a1 1 0 00.1 1.3l.8.8a1 1 0 001.3.1L15.1 12"/><path d="M16.5 21.2C15.5 20.5 14.4 20 13 20c-2.1 0-3.9 2.4-6 2-2.1-.4-2.8-3.4-1.5-4.5"/><circle cx="16" cy="7" r="5"/></svg></div>
+        <h3>Athlete media training</h3>
+        <p>Preparation that helps athletes and coaches communicate with confidence in any setting.</p>
+        <ul><li>Mock interviews &amp; press conferences</li><li>Message development</li><li>On-camera coaching</li></ul>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></div>
+        <h3>Digital &amp; social strategy</h3>
+        <p>Channel strategy and content planning that keeps your voice consistent across every platform.</p>
+        <ul><li>Content calendars</li><li>Platform &amp; voice guidelines</li><li>Performance reporting</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I WORK WITH -->
+<section class="clients-band on-navy">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Who I work with</h2>
+    </div>
+    <div class="audiences reveal">
+      <div class="aud"><span class="dot"></span><h3>Teams &amp; leagues</h3><p>Professional and amateur organizations that need a steady, strategic communications partner.</p></div>
+      <div class="aud"><span class="dot"></span><h3>College athletics</h3><p>Athletic departments and programs managing big stories and bigger audiences.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Athletes &amp; coaches</h3><p>Individuals building a reputation, a brand and a career that lasts beyond the game.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Brands &amp; sponsors</h3><p>Companies looking to connect with fans through authentic sports partnerships.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block about" id="about">
+  <div class="wrap">
+    <figure class="portrait reveal" style="margin:0">
+      <img src="assets/headshot.jpg" alt="Daniel Loftus, Founder of Loftus Sports Communications" width="900" height="1083" loading="lazy">
+      <figcaption class="portrait-cap"><strong>Daniel Loftus</strong><span>Loftus Sports Communications</span></figcaption>
+    </figure>
+    <div class="about-copy reveal">
+      <p class="label">About</p>
+      <h2>Experienced Comms Pro Across Pro Sports &amp; College Athletics</h2>
+      <p>I&rsquo;m Daniel Loftus, a Denver-based sports writer and communicator. I help teams, athletic departments, athletes and sponsors turn their stories into fan engagement, marketing opportunities and revenue.</p>
+      <p>I spent three years in the Brooklyn Nets&rsquo; communications department, writing the releases, guides and game notes behind a pro franchise&rsquo;s media operation and planning storytelling opportunities for athletes, coaches and executives. I also built a media platform that drew 10,000+ visits in its first five months. Before that, I worked in athletic communications at Notre Dame, Syracuse and Xavier and supported the Big Ten Conference and the NFL.</p>
+      <p>I hold a master&rsquo;s in management from Notre Dame&rsquo;s Mendoza College of Business and a bachelor&rsquo;s in public relations from Syracuse&rsquo;s Newhouse School.</p>
+      <div class="about-btns">
+      <a class="btn btn-primary" href="assets/Daniel-Loftus-Resume.pdf" target="_blank" rel="noopener">Resume
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+      </a>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/dl1/" target="_blank" rel="noopener">LinkedIn
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE / TESTIMONIAL BLOCK (hidden until testimonials are ready; styles live under "Quote" in the CSS).
+     Placement: between About and Contact. To use, uncomment and swap in the testimonial text.
+<section class="quote">
+  <div class="wrap reveal">
+    <div class="mark"></div>
+    <blockquote>&ldquo;The best stories in sports aren&rsquo;t just played. They&rsquo;re told.&rdquo;</blockquote>
+  </div>
+</section>
+-->
+
+<!-- CONTACT -->
+<section class="block contact on-navy" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="label">Contact</p>
+      <h2>Start the conversation.</h2>
+      <p class="lede">Send a quick note and I'll be in touch!</p>
+      <div class="contact-points">
+        <div><span class="dot"></span><span>Prefer email? Reach out at <a href="mailto:Daniel@loftussportscomms.com">Daniel@loftussportscomms.com</a></span></div>
+      </div>
+    </div>
+
+    <form class="card reveal" id="contact-form">
+      <div class="row">
+        <div class="field"><label for="f-name">Name <abbr title="required">*</abbr></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email <abbr title="required">*</abbr></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field"><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization"></div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+      <button class="btn btn-primary" type="submit">Send message
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form-note">Your message opens in your email app, ready to send.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <img src="assets/monogram-navy.png" alt="Loftus Sports Communications" width="110" height="151">
+      </a>
+      <nav aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="https://danielloftuscfb.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener">Substack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="bottom">
+      <span>&copy; <span id="yr">2026</span> Loftus Sports Communications. All rights reserved.</span>
+      <span>Sports PR &middot; Media Relations &middot; Storytelling</span>
+      <span class="footer-contact">
+        <a class="li" href="https://www.linkedin.com/in/dl1/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="mailto:Daniel@loftussportscomms.com">Daniel@loftussportscomms.com</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const CONTACT_EMAIL = "Daniel@loftussportscomms.com";
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Sticky nav shadow
+  const nav = document.querySelector(".nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Mobile menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const links = document.getElementById("nav-links");
+  menuBtn.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  links.addEventListener("click", e => {
+    if (e.target.closest("a")) { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }
+  });
+
+  // Scroll reveal
+  const io = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 }) : null;
+  document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+
+  // Contact form -> mailto (swap for Formspree/Netlify Forms when hosting)
+  document.getElementById("contact-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const d = new FormData(e.target);
+    const subject = `New inquiry from ${d.get("name")}${d.get("organization") ? " (" + d.get("organization") + ")" : ""}`;
+    const body = `Name: ${d.get("name")}\nEmail: ${d.get("email")}\nOrganization: ${d.get("organization") || "-"}\n\n${d.get("message") || ""}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+</body>
+</html>

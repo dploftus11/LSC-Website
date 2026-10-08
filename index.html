@@ -235,7 +235,12 @@
   .field textarea { min-height: 128px; resize: vertical; }
   .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(30, 91, 64, .15); }
   form.card .btn { width: 100%; justify-content: center; margin-top: 6px; }
-  .form-note { margin: 14px 0 0; font-size: 14px; color: var(--slate); text-align: center; }
+  .form-note { margin: 14px 0 0; font-size: 15px; color: var(--slate); text-align: center; min-height: 1.4em; }
+  .form-note.ok { color: var(--green); font-weight: 600; }
+  .form-note.err { color: #9B2C2C; font-weight: 600; }
+  .form-note a { color: inherit; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  form.card button[disabled] { opacity: .7; cursor: wait; transform: none; }
 
   /* Footer */
   footer { background: var(--navy); border-top: 1px solid rgba(245, 243, 238, .1); color: rgba(245, 243, 238, .7); padding: 54px 0 40px; font-size: 15px; }
@@ -492,10 +497,12 @@
       </div>
       <div class="field"><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization"></div>
       <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+      <!-- Spam trap: hidden from people, bots fill it in and Web3Forms drops the submission -->
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn btn-primary" type="submit">Send message
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
-      <p class="form-note">Your message opens in your email app, ready to send.</p>
+      <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -552,13 +559,47 @@
   }, { threshold: 0.12 }) : null;
   document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
 
-  // Contact form -> mailto (swap for Formspree/Netlify Forms when hosting)
-  document.getElementById("contact-form").addEventListener("submit", e => {
+  // Contact form -> Web3Forms (emails each submission to Daniel@loftussportscomms.com)
+  const WEB3FORMS_KEY = "130d2d6b-1986-463d-8c8d-601ec5dd1f99";
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const sendBtn = form.querySelector('button[type="submit"]');
+  const sendLabel = sendBtn.firstChild.textContent;
+  form.addEventListener("submit", async e => {
     e.preventDefault();
-    const d = new FormData(e.target);
-    const subject = `New inquiry from ${d.get("name")}${d.get("organization") ? " (" + d.get("organization") + ")" : ""}`;
-    const body = `Name: ${d.get("name")}\nEmail: ${d.get("email")}\nOrganization: ${d.get("organization") || "-"}\n\n${d.get("message") || ""}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const d = new FormData(form);
+    const org = d.get("organization");
+    sendBtn.disabled = true;
+    sendBtn.firstChild.textContent = "Sending\u2026 ";
+    status.className = "form-note";
+    status.textContent = "";
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New inquiry from ${d.get("name")}${org ? " (" + org + ")" : ""}`,
+          from_name: "loftussportscomms.com",
+          name: d.get("name"),
+          email: d.get("email"),
+          organization: org || "-",
+          message: d.get("message") || "-",
+          botcheck: d.get("botcheck") ? true : ""
+        })
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || "Send failed");
+      form.reset();
+      status.className = "form-note ok";
+      status.textContent = "Thanks! Your message is on its way. I\u2019ll be in touch soon.";
+    } catch (err) {
+      status.className = "form-note err";
+      status.innerHTML = `Sorry, something went wrong. Please email me at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.firstChild.textContent = sendLabel;
+    }
   });
 </script>
 </body>

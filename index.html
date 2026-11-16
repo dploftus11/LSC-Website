@@ -138,6 +138,7 @@
   .hero .wrap { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
   .hero h1 { margin-top: 6px; }
   .hero .lede { font-size: 20px; }
+  .hero-sub { margin: 14px 0 0; max-width: 60ch; font-size: 16px; line-height: 1.6; color: rgba(245, 243, 238, .62); }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
 
   .playbook {
@@ -175,7 +176,7 @@
   .section-head.centered .label { justify-content: center; }
 
   /* Services */
-  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   .service { background: var(--chalk); padding: 38px 34px 40px; transition: background .25s; position: relative; }
   .service::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: var(--rule-light); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
   .service:hover { background: var(--white); }
@@ -188,7 +189,7 @@
   .service li { font-size: 15px; color: var(--ink); padding: 5px 0 5px 18px; position: relative; }
   .service li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 
-  /* Who I work with */
+  /* Who we work with */
   .clients-band { padding: clamp(80px, 10vw, 120px) 0; }
   .audiences { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
   .aud { border-top: 1px solid rgba(245, 243, 238, .16); padding-top: 26px; }
@@ -267,11 +268,13 @@
 
   /* Desktop: compact hero so the "Experience across" strip shows above the fold */
   @media (min-width: 1021px) {
-    .hero { padding: 52px 0 60px; }
-    .hero .wrap { grid-template-columns: 1.45fr 1fr; gap: 64px; }
-    .hero h1 { font-size: clamp(52px, 4.6vw, 68px); }
-    .hero .lede { margin-top: 18px; }
-    .hero-ctas { margin-top: 28px; }
+    .hero { padding: 36px 0 44px; }
+    .hero .wrap { grid-template-columns: 1.6fr 1fr; gap: 56px; }
+    .hero h1 { font-size: clamp(46px, 4vw, 58px); }
+    .hero h1 .keep-line { white-space: nowrap; }
+    .hero .lede { margin-top: 14px; font-size: 18px; }
+    .hero-sub { margin-top: 10px; font-size: 15px; }
+    .hero-ctas { margin-top: 22px; }
     .playbook { padding: 22px 26px 4px; }
     .playbook-head { margin-bottom: 4px; }
     .play { padding: 13px 0; }
@@ -282,13 +285,13 @@
   @media (max-width: 1020px) {
     .hero .wrap { grid-template-columns: 1fr; }
     .playbook { max-width: 560px; }
-    .services { grid-template-columns: repeat(2, 1fr); }
     .audiences { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
     .logos .wrap { grid-template-columns: 1fr; gap: 28px; }
     .logos .label { justify-content: center; }
     .logo-row { justify-content: center; }
   }
   @media (max-width: 860px) {
+    .services { grid-template-columns: 1fr; }
     .menu-btn { display: block; }
     .nav-links {
       position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
@@ -341,8 +344,9 @@
   <div class="wrap">
     <div class="reveal">
       <p class="label">Sports PR &amp; Marketing</p>
-      <h1>Mission-Driven PR and Marketing <span class="hl">support</span></h1>
-      <p class="lede">Media relations, writing and campaign development from an experienced sports PR pro.</p>
+      <h1>Sports stories. <span class="keep-line">Strategic communications.</span> <span class="hl">Real impact.</span></h1>
+      <p class="lede">Communications, content, and storytelling support for the teams, agencies, athletes, and brands shaping the sports industry.</p>
+      <p class="hero-sub">From behind-the-scenes communications production to bigger-picture brand and storytelling strategies, Loftus Sports Communications provides the experience and flexibility to bring sports stories to life.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#contact">Contact
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -391,44 +395,39 @@
 
     <div class="services reveal">
       <article class="service">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
-        <h3>Fractional PR &amp; Marketing Support</h3>
-        <p>Sports PR demands a lot. Add an outside team member to free you up for the storytelling that matters.</p>
-        <ul><li>Game notes, media guides &amp; record keeping</li><li>Previews &amp; press releases</li><li>Athlete brand building &amp; media outreach</li></ul>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div>
+        <h3>Communications &amp; Media Support</h3>
+        <p>Specialized communications support for sports organizations, teams, leagues, and agencies. From recurring production needs to project-based assistance, we help manage the work that keeps communications operations moving.</p>
+        <ul><li>Game notes, statistical research, and team records</li><li>Media guides, season previews, and reference materials</li><li>Player bios, roster information, and media materials</li><li>Press releases, media advisories, and editorial support</li><li>Ongoing, seasonal, and project-based communications assistance</li></ul>
       </article>
       <article class="service">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 100-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="M7 20l1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 00-2.75-2.91l-4.2 3.9"/><path d="M2 15l6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0016 4a2.78 2.78 0 00-5 1.8c0 1.2.8 2 1.5 2.8L16 12z"/></svg></div>
-        <h3>Non-Profit &amp; Foundation Media</h3>
-        <p>With a background in community activation and storytelling, allow LSC to help tell the story and grow the impact of your non-profit.</p>
-        <ul><li>Earned media &amp; event planning</li><li>Social media management &amp; web design</li><li>Brand storytelling &amp; donor engagement</li></ul>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M11 7.6l-6 8.2a1 1 0 00.1 1.3l.8.8a1 1 0 001.3.1L15.1 12"/><path d="M16.5 21.2C15.5 20.5 14.4 20 13 20c-2.1 0-3.9 2.4-6 2-2.1-.4-2.8-3.4-1.5-4.5"/><circle cx="16" cy="7" r="5"/></svg></div>
+        <h3>Athlete &amp; Brand Storytelling</h3>
+        <p>Helping athletes, agencies, and sports organizations develop compelling narratives, strengthen their profiles, and build meaningful connections with audiences.</p>
+        <ul><li>Athlete media kits and professional bios</li><li>Personal brand positioning and storytelling strategies</li><li>Media relations and publicity support</li><li>Content strategy and editorial development</li><li>Sponsorship storytelling and partnership communications</li></ul>
       </article>
       <article class="service">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg></div>
-        <h3>Brand Marketing</h3>
-        <p>Sports tech, startups, outdoor brands: anyone looking to explore the sports media space and how to tell their story.</p>
-        <ul><li>Brand deliverable execution</li><li>Branded content support</li><li>Earned &amp; owned media execution</li></ul>
-      </article>
-      <article class="service">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></div>
-        <h3>Digital &amp; Social Media</h3>
-        <p>Channel strategy and content planning that keeps your voice consistent across every platform.</p>
-        <ul><li>Content calendars</li><li>Platform &amp; voice guidelines</li><li>Performance reporting</li></ul>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/><path d="M15 8h5v5"/></svg></div>
+        <h3>Content &amp; Marketing Strategy</h3>
+        <p>Turning ideas, research, and partnerships into effective content and communications initiatives for sports organizations and brands.</p>
+        <ul><li>Content strategy and development</li><li>Brand and sponsorship communications</li><li>Campaign planning and execution</li><li>Research-driven storytelling</li><li>Digital and social content development</li></ul>
       </article>
     </div>
   </div>
 </section>
 
-<!-- WHO I WORK WITH -->
+<!-- WHO WE WORK WITH -->
 <section class="clients-band on-navy">
   <div class="wrap">
     <div class="reveal">
-      <h2>Who I work with</h2>
+      <h2>Built for the Business of Sports</h2>
+      <p class="lede">We work with organizations and individuals across the sports industry, providing flexible communications and storytelling support tailored to their needs.</p>
     </div>
     <div class="audiences reveal">
-      <div class="aud"><span class="dot"></span><h3>Teams &amp; leagues</h3><p>Professional and amateur organizations that need a steady, strategic communications partner.</p></div>
-      <div class="aud"><span class="dot"></span><h3>Brands &amp; sponsors</h3><p>Sport-adjacent brands and sponsors looking to connect with a targeted audience.</p></div>
-      <div class="aud"><span class="dot"></span><h3>College athletics</h3><p>Athletic departments and programs managing big stories and bigger audiences.</p></div>
-      <div class="aud"><span class="dot"></span><h3>Athletes &amp; foundations</h3><p>Individuals building a reputation, a brand and a career that lasts beyond the game.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Teams &amp; Leagues</h3><p>Helping professional and collegiate sports organizations manage communications workloads, produce media materials, and tell the stories happening across their programs.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Agencies &amp; Athlete Management Groups</h3><p>Serving as an extension of agency teams, providing communications support, developing athlete narratives, and helping build the profiles of the talent they represent.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Individual Athletes</h3><p>Helping athletes take control of their stories, strengthen their personal brands, build media visibility, and maximize the value of their partnerships.</p></div>
+      <div class="aud"><span class="dot"></span><h3>Brands &amp; Sponsors</h3><p>Helping brands connect with sports audiences through strategic communications, compelling content, and authentic partnership storytelling.</p></div>
     </div>
   </div>
 </section>
@@ -443,9 +442,11 @@
     <div class="about-copy reveal">
       <p class="label">About</p>
       <h2>Experienced Comms Pro Across Pro Sports &amp; College Athletics</h2>
-      <p>I&rsquo;m Daniel Loftus, a Denver-based sports writer and communicator. I help teams, athletic departments, athletes and sponsors turn their stories into fan engagement, marketing opportunities and revenue.</p>
-      <p>I spent three years in the Brooklyn Nets&rsquo; communications department, writing the releases, guides and game notes behind a pro franchise&rsquo;s media operation and planning storytelling opportunities for athletes, coaches and executives. I also built a media platform that drew 10,000+ visits in its first five months. Before that, I worked in athletic communications at Notre Dame, Syracuse and Xavier and supported the Big Ten Conference and the NFL.</p>
-      <p>I hold a master&rsquo;s in management from Notre Dame&rsquo;s Mendoza College of Business and a bachelor&rsquo;s in public relations from Syracuse&rsquo;s Newhouse School.</p>
+      <p>I&rsquo;m Daniel Loftus, founder of Loftus Sports Communications, an independent sports communications and content practice based in Denver, Colorado.</p>
+      <p>My career has taken me across professional sports, college athletics, and brand marketing, providing a firsthand understanding of how teams, athletes, agencies, and brands operate within the sports industry.</p>
+      <p>During three seasons with the Brooklyn Nets, I worked across the organization&rsquo;s communications operation, producing daily game notes, conducting statistical research, developing media guides and reference materials, and identifying compelling stories around players, coaches, and the organization.</p>
+      <p>My experience also includes athletic communications at Notre Dame, Syracuse, and Xavier, work with the NFL, and brand marketing and sponsorship work with T-Mobile.</p>
+      <p>Today, I bring those experiences together to help sports organizations, agencies, athletes, and brands communicate more effectively, develop compelling stories, and build stronger connections with their audiences.</p>
       <div class="about-btns">
       <a class="btn btn-primary" href="assets/Daniel-Loftus-Resume.pdf" target="_blank" rel="noopener">Resume
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
@@ -473,10 +474,11 @@
   <div class="wrap">
     <div class="reveal">
       <p class="label">Contact</p>
-      <h2>Start the conversation.</h2>
-      <p class="lede">Send a quick note and I'll be in touch!</p>
+      <h2>Have a Story to Tell?</h2>
+      <p class="lede">Whether you&rsquo;re managing a sports organization, representing athletes, building your personal brand, or developing a sports marketing initiative, let&rsquo;s talk about how Loftus Sports Communications can help.</p>
+      <p class="lede">From ongoing communications support to individual projects and strategic consulting, we&rsquo;re ready to help bring your next idea to life.</p>
       <div class="contact-points">
-        <div><span class="dot"></span><span>Prefer email? Reach out at <a href="mailto:Daniel@loftussportscomms.com">Daniel@loftussportscomms.com</a></span></div>
+        <div><span class="dot"></span><span>Get in touch: <a href="mailto:Daniel@loftussportscomms.com">Daniel@loftussportscomms.com</a></span></div>
       </div>
     </div>
 
